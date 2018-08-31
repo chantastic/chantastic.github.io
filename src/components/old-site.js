@@ -1,5 +1,48 @@
 import React from 'react'
 
+function OutboundA(props) {
+  return <a target="_blank" rel="noopener noreferrer" {...props} />
+}
+
+function OutboundTalkCard({ title, event, date, tags = [], ...props }) {
+  function Tag({ style, ...props }) {
+    return (
+      <span
+        style={{
+          backgroundColor: '#eee',
+          borderRadius: '.5em',
+          display: 'inline-block',
+          padding: '.25em .5em',
+          marginLeft: '1em',
+          fontSize: 'smaller',
+          lineHeight: '1em',
+          ...style,
+        }}
+        {...props}
+      />
+    )
+  }
+
+  return (
+    <div>
+      <div>
+        <OutboundA {...props}>{title}</OutboundA>
+      </div>
+      <div>
+        <strong>{event}</strong>
+        <span>, {date}</span>
+      </div>
+      {tags.length > 0 && (
+        <span>
+          {tags.map((tag, i) => (
+            <Tag style={i === 0 && { marginLeft: 0 }}>{tag}</Tag>
+          ))}
+        </span>
+      )}
+    </div>
+  )
+}
+
 export default function() {
   return (
     <div>
@@ -8,7 +51,7 @@ export default function() {
       <section>
         <h2>Resources</h2>
 
-        <ul>
+        <ul style={{ listStyleType: 'none' }}>
           <li>
             <a target="_blank" href="http://reactcheatsheet.com/">
               React Cheat Sheet
@@ -36,91 +79,111 @@ export default function() {
       </section>
 
       <section>
+        <h2>Podcasts</h2>
+
+        <ul style={{ listStyleType: 'none' }}>
+          <li>
+            <OutboundA href="https://reactpodcast.com">React Podcast</OutboundA>
+            <span> — React stuff</span>
+          </li>
+          <li>
+            <OutboundA href="http://birdcallreview.com">
+              Bird Call Review
+            </OutboundA>
+            <span> — Nonsense and frivolity</span>
+          </li>
+          <li>
+            <OutboundA href="http://briefs.fm/chantastic">briefs.fm</OutboundA>
+            <span> — 3 minute confessions</span>
+          </li>
+        </ul>
+      </section>
+
+      <section>
         <h2>Talks</h2>
 
-        <ul>
+        <ul style={{ listStyleType: 'none' }}>
           <li>
-            <a
-              target="_blank"
+            <OutboundTalkCard
+              title="Hot Garbage: Clean Code is Dead"
+              event="React Rally"
+              date="Aug 2018"
               href="https://www.youtube.com/watch?v=-NP_upexPFg&t"
-            >
-              Hot Garbage: Clean Code is Dead at React Rally
-            </a>
-            , Aug 2018
+              tags={['Communication', 'Architecture', 'Design']}
+            />
           </li>
           <li>
-            <a
-              target="_blank"
+            <OutboundTalkCard
+              title="Back to React"
+              event="React Rally"
+              date="Aug 2017"
               href="https://www.youtube.com/watch?v=T9-Mb_axNgA"
-            >
-              Back to React at React Rally
-            </a>
-            , Aug 2017
+              tags={['Communication', 'Architecture', 'Design', 'React']}
+            />
           </li>
           <li>
-            <a
-              target="_blank"
+            <OutboundTalkCard
+              title="Component Patterns in React"
+              event="Fullstack Talks"
+              date="Feb 2017"
               href="https://www.youtube.com/watch?v=YaZg8wg39QQ"
-            >
-              Component Patterns in React at fullstack talks
-            </a>
-            , Feb 2017
+              tags={['React', 'Patterns']}
+            />
           </li>
           <li>
-            <a
-              target="_blank"
+            <OutboundTalkCard
+              title="Lightning Talk: Minions CSS Framework"
+              event="Fullstack Talks"
               href="https://www.youtube.com/watch?v=tMg6krAVtXY"
-            >
-              Lightning Talk: Minions CSS Framework at fullstack
-            </a>
-            , Nov 2016
+              date="Nov 2016"
+              tags={['CSS', 'Design']}
+            />
           </li>
 
           <li>
-            <a
-              target="_blank"
-              href="https://www.youtube.com/watch?v=gNeavlJ7lNY&t=907s"
-            >
-              Style Components at fullstack
-            </a>
-            , Aug 2016
+            <OutboundTalkCard
+              title="Style Components"
+              event="Fullstack Talks"
+              href="https://www.youtube.com/watch?v=gNeavlJ7lNY&t"
+              date="Aug 2016"
+              tags={['CSS', 'Design']}
+            />
           </li>
           <li>
-            <a
-              target="_blank"
+            <OutboundTalkCard
+              title="Styling React Components"
+              event="Nodevember"
               href="https://www.youtube.com/watch?v=0aBv8dsZs84"
-            >
-              Styling React Components at Nodevember
-            </a>
-            , Dec 2015
+              date="Dec 2015"
+              tags={['CSS', 'Design']}
+            />
           </li>
           <li>
-            <a
-              target="_blank"
+            <OutboundTalkCard
+              title="Intro to minions.css"
+              event="Nodevember"
               href="https://www.youtube.com/watch?v=QQYj_kBCtxc"
-            >
-              minions.css intro
-            </a>
-            , Dec 2015
+              date="Dec 2015"
+              tags={['CSS', 'Design']}
+            />
           </li>
           <li>
-            <a
-              target="_blank"
+            <OutboundTalkCard
+              title="Inline Styles: themes, media queries, contexts, &amp; when it's best to use CSS at React Europe"
+              event="React Europe"
               href="https://www.youtube.com/watch?v=ERB1TJBn32c"
-            >
-              Inline Styles: themes, media queries, contexts, &amp; when it's
-              best to use CSS at React Europe
-            </a>
-            , Jul 2015
+              date="July 2015"
+              tags={['React', 'Style', 'CSS', 'Design']}
+            />
           </li>
           <li>
-            <a
-              target="_blank"
+            <OutboundTalkCard
+              title="React.js on Rails at RailsConf"
+              event="RailsConf"
               href="https://www.youtube.com/watch?v=kTSsZrub5iE"
-            >
-              React.js on Rails at RailsConf
-            </a>
-            , May 2015
+              date="May 2015"
+              tags={['React', 'Style', 'CSS', 'Design']}
+            />
           </li>
         </ul>
       </section>
@@ -128,7 +191,7 @@ export default function() {
       <section>
         <h2>Projects</h2>
 
-        <ul>
+        <ul style={{ listStyleType: 'none' }}>
           <li>
             <a href="https://chantastic.org/btn.css">btn.css</a>
           </li>
@@ -146,81 +209,33 @@ export default function() {
       </section>
 
       <section>
-        <h2>Podcasts</h2>
-
-        <h4>Shows</h4>
-        <ul>
-          <li>
-            <a target="_blank" href="http://birdcallreview.com">
-              Bird Call Review
-            </a>
-          </li>
-          <li>
-            <a target="_blank" href="http://briefs.fm/chantastic">
-              chantastic on briefs.fm
-            </a>
-          </li>
-        </ul>
-
-        <h4>Episodes</h4>
-        <ul>
-          <li>
-            <a
-              target="_blank"
-              href="http://reactpodcast.com/2015/08/4-conference-recap-css-vs-inline-styles/"
-            >
-              React Podcast, ep. 4, "React, GraphQL, Immutable &amp; Bow-Ties
-              with Special Guest Lee Byron"
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="http://reactpodcast.com/2015/12/7-rapid-fire-1-with-special-guest-dan-abramov/"
-            >
-              React Podcast, ep. 7, "Rapid-fire with Special Guest Dan Abramov"
-            </a>
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="http://reactpodcast.com/2015/12/8-react-graphql-immutable-bow-ties-with-special-guest-lee-byron/"
-            >
-              React Podcast, ep. 8, "React Europe Recap &amp; CSS vs Inline
-              Styles"
-            </a>
-          </li>
-        </ul>
-      </section>
-
-      <section>
         <h2>Notes</h2>
 
-        <ul>
+        <ul style={{ listStyleType: 'none' }}>
           <li>
-            <a target="_blank" href="http://chantastic.io/2016-reactjs-conf">
+            <OutboundA href="http://chantastic.io/2016-reactjs-conf">
               2016 React.js Conf
-            </a>
+            </OutboundA>
           </li>
           <li>
-            <a target="_blank" href="http://chantastic.io/2015-react-europe">
+            <OutboundA href="http://chantastic.io/2015-react-europe">
               2015 React Europe
-            </a>
+            </OutboundA>
           </li>
           <li>
-            <a target="_blank" href="http://chantastic.io/2015-reactjs-conf">
+            <OutboundA href="http://chantastic.io/2015-reactjs-conf">
               2015 React.js Conf
-            </a>
+            </OutboundA>
           </li>
           <li>
-            <a target="_blank" href="http://chantastic.io/jsconf2014">
+            <OutboundA href="http://chantastic.io/jsconf2014">
               2014 JSConf
-            </a>
+            </OutboundA>
           </li>
           <li>
-            <a target="_blank" href="http://chantastic.io/emberconf2014">
+            <OutboundA href="http://chantastic.io/emberconf2014">
               2014 EmberConf
-            </a>
+            </OutboundA>
           </li>
         </ul>
       </section>
@@ -228,17 +243,31 @@ export default function() {
       <section>
         <h2>Gear</h2>
 
-        <ul>
+        <ul style={{ listStyleType: 'none' }}>
           <li>
             <a href="https://chantastic.org/gear/drawing">drawing</a>
           </li>
         </ul>
       </section>
 
-      <footer>
-        <a href="https://twitter.com/chantastic">chantastic</a>
-        <a href="https://github.com/chantastic">github</a>
-      </footer>
+      <section>
+        <h2>Contact</h2>
+
+        <ul style={{ listStyleType: 'none' }}>
+          <li>
+            <a href="https://twitter.com/chantastic">twitter</a>
+          </li>
+          <li>
+            <a href="https://github.com/chantastic">github</a>
+          </li>
+          <li>
+            <a href="https://github.com/chantastic">instagram</a>
+          </li>
+          <li>
+            <a href="https://medium.com/@chantastic">medium</a>
+          </li>
+        </ul>
+      </section>
     </div>
   )
 }
