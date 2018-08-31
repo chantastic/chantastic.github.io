@@ -42,18 +42,46 @@ export default function() {
           <li>
             <a
               target="_blank"
+              href="https://www.youtube.com/watch?v=-NP_upexPFg&t"
+            >
+              Hot Garbage: Clean Code is Dead at React Rally
+            </a>
+            , Aug 2018
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=T9-Mb_axNgA"
+            >
+              Back to React at React Rally
+            </a>
+            , Aug 2017
+          </li>
+          <li>
+            <a
+              target="_blank"
               href="https://www.youtube.com/watch?v=YaZg8wg39QQ"
             >
-              Component Patterns in React
+              Component Patterns in React at fullstack talks
             </a>
             , Feb 2017
           </li>
           <li>
             <a
               target="_blank"
-              href="https://www.youtube.com/watch?v=gNeavlJ7lNY&amp;t=907s"
+              href="https://www.youtube.com/watch?v=tMg6krAVtXY"
             >
-              Style Components
+              Lightning Talk: Minions CSS Framework at fullstack
+            </a>
+            , Nov 2016
+          </li>
+
+          <li>
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=gNeavlJ7lNY&t=907s"
+            >
+              Style Components at fullstack
             </a>
             , Aug 2016
           </li>
@@ -62,7 +90,16 @@ export default function() {
               target="_blank"
               href="https://www.youtube.com/watch?v=0aBv8dsZs84"
             >
-              Styling React Components
+              Styling React Components at Nodevember
+            </a>
+            , Dec 2015
+          </li>
+          <li>
+            <a
+              target="_blank"
+              href="https://www.youtube.com/watch?v=QQYj_kBCtxc"
+            >
+              minions.css intro
             </a>
             , Dec 2015
           </li>
@@ -72,7 +109,7 @@ export default function() {
               href="https://www.youtube.com/watch?v=ERB1TJBn32c"
             >
               Inline Styles: themes, media queries, contexts, &amp; when it's
-              best to use CSS
+              best to use CSS at React Europe
             </a>
             , Jul 2015
           </li>
@@ -81,18 +118,9 @@ export default function() {
               target="_blank"
               href="https://www.youtube.com/watch?v=kTSsZrub5iE"
             >
-              React.js on Rails
+              React.js on Rails at RailsConf
             </a>
             , May 2015
-          </li>
-          <li>
-            <a
-              target="_blank"
-              href="https://www.youtube.com/watch?v=xLYDsq_YWvw"
-            >
-              Why React
-            </a>
-            , Feb 2015
           </li>
         </ul>
       </section>
